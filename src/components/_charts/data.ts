@@ -109,8 +109,7 @@ export const barsData = [
   { timestamp: Date.now() + 21 * HOUR_TO_SEC, quantity: 0.366 },
   { timestamp: Date.now() + 22 * HOUR_TO_SEC, quantity: 0.3232 },
   { timestamp: Date.now() + 23 * HOUR_TO_SEC, quantity: 0.1123 },
-  { timestamp: Date.now() + 24 * HOUR_TO_SEC, quantity: 0.32 },
-  { timestamp: Date.now(), quantity: 0.35 }
+  { timestamp: Date.now() + 24 * HOUR_TO_SEC, quantity: 0 }
 ]
 
 export const scatterDomain = [Date.now(), Date.now() + 23 * HOUR_TO_SEC]
