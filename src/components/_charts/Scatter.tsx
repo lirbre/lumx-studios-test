@@ -52,6 +52,7 @@ export const ComponentScatter = () => {
                 xHeight={0.5}
                 vertical={false}
                 strokeWidth={0.2}
+                stroke="#6E7191"
               />
               <YAxis
                 dataKey="pricetag"
@@ -63,7 +64,14 @@ export const ComponentScatter = () => {
                 tickCount={6}
                 fontSize={'14px'}
                 stroke="#6E7191"
+                strokeWidth={0.2}
                 fontWeight={700}
+              />
+              <XAxis
+                strokeWidth={0.2}
+                hide={true}
+                stroke="#6E7191"
+                dataKey="timestamp"
               />
               <Tooltip
                 labelClassName="hidden"
