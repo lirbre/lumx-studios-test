@@ -86,7 +86,6 @@ export const scatterData = [
 ]
 
 export const barsData = [
-  { timestamp: Date.now() + 1 * HOUR_TO_SEC, quantity: 0.4 },
   { timestamp: Date.now() + 2 * HOUR_TO_SEC, quantity: 0.21 },
   { timestamp: Date.now() + 3 * HOUR_TO_SEC, quantity: 0.33 },
   { timestamp: Date.now() + 4 * HOUR_TO_SEC, quantity: 0.29 },
@@ -108,7 +107,7 @@ export const barsData = [
   { timestamp: Date.now() + 20 * HOUR_TO_SEC, quantity: 0.123 },
   { timestamp: Date.now() + 21 * HOUR_TO_SEC, quantity: 0.366 },
   { timestamp: Date.now() + 22 * HOUR_TO_SEC, quantity: 0.3232 },
-  { timestamp: Date.now() + 23 * HOUR_TO_SEC, quantity: 0.1123 },
+  { timestamp: Date.now() + 23 * HOUR_TO_SEC, quantity: 0 },
   { timestamp: Date.now() + 24 * HOUR_TO_SEC, quantity: 0 }
 ]
 
