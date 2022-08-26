@@ -1,6 +1,7 @@
 import moment from 'moment'
 import { useMemo } from 'react'
 import {
+  Bar,
   BarChart,
   CartesianGrid,
   ResponsiveContainer,
@@ -11,11 +12,11 @@ import {
   YAxis
 } from 'recharts'
 
-import { scatterData, scatterDomain } from './data'
+import { barsData, scatterData, scatterDomain } from './data'
 
 export const ComponentScatter = () => {
   return (
-    <div className="h-[294px] w-11/12 rounded-b-[2px] bg-[#262338] md:h-[428px] md:max-w-[1216px]">
+    <div className="h-[294px] w-11/12 rounded-t-[2px] bg-[#262338] md:h-[428px] md:max-w-[1216px]">
       <div className="flex h-[28px] w-full items-center justify-between bg-[#262338] px-6 pt-4">
         <small className="text-[#6E7191]">PRICE IN ETH</small>
         <div className="flex items-center justify-center gap-3">
@@ -25,7 +26,7 @@ export const ComponentScatter = () => {
             className="relative flex cursor-pointer items-center"
           >
             <input type="checkbox" id="outlier" className="sr-only" />
-            <div className="toggle-bg h-6 w-20 rounded-[2px] border-[#EFF0F6] bg-[#4E4B66] " />
+            <div className="toggle-bg h-6 w-20 border-[#EFF0F6] bg-[#4E4B66] " />
           </label>
         </div>
       </div>
@@ -78,7 +79,6 @@ export const ComponentScatter = () => {
                 }}
                 cursor={{ strokeDasharray: '3 3' }}
                 formatter={(name: string, value: string | number) => {
-                  console.log(name, value)
                   if (value !== 'Hour') return `${name} ETH`
 
                   return `${moment(name).format('HH')}:00`
@@ -92,16 +92,21 @@ export const ComponentScatter = () => {
       </ResponsiveContainer>
       <ResponsiveContainer
         width={'100%'}
-        height={78}
-        className="h-[294px] w-full rounded-b-[2px] bg-[#262338] md:h-[358px] md:max-w-[1216px]"
+        height={48}
+        className="h-[294px] w-full bg-[#262338] md:h-[358px] md:max-w-[1216px]"
       >
         <BarChart
+          width={500}
+          height={300}
+          data={barsData}
           margin={{
-            top: 44,
+            top: 0,
             right: 64,
-            bottom: 34,
-            left: 64
+            bottom: 0,
+            left: 0
           }}
+          barSize={4}
+          className="bar-recharts"
         >
           <XAxis
             dataKey="timestamp"
@@ -109,17 +114,27 @@ export const ComponentScatter = () => {
             name="Hour"
             tickFormatter={(unixTime) => `${moment(unixTime).format('HH')}:00`}
             type="number"
-            tickCount={12}
+            tickCount={24}
             markerHeight={10}
             fontSize={'13px'}
-            dx={12}
-            dy={12}
+            dy={8}
             stroke="#6E7191"
             strokeWidth={0.2}
-            className="bar-recharts"
-          />
+          />{' '}
+          <YAxis
+            type="number"
+            name="Quantity"
+            dataKey="quantity"
+            axisLine={false}
+            tickLine={false}
+            domain={[0, 0.5]}
+            fontSize={'0'}
+            fontWeight={700}
+          />{' '}
+          <Bar dataKey="quantity" fill="#6E7191" />
         </BarChart>
       </ResponsiveContainer>
+      <div className="h-0 w-full rounded-b-[2px] bg-[#262338] md:h-6"></div>
     </div>
   )
 }

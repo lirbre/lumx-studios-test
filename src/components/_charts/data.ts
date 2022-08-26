@@ -85,4 +85,32 @@ export const scatterData = [
   { timestamp: Date.now() + 18.22 * HOUR_TO_SEC, pricetag: 0.122 }
 ]
 
+export const barsData = [
+  { timestamp: Date.now() + 1 * HOUR_TO_SEC, quantity: 0.4 },
+  { timestamp: Date.now() + 2 * HOUR_TO_SEC, quantity: 0.21 },
+  { timestamp: Date.now() + 3 * HOUR_TO_SEC, quantity: 0.33 },
+  { timestamp: Date.now() + 4 * HOUR_TO_SEC, quantity: 0.29 },
+  { timestamp: Date.now() + 5 * HOUR_TO_SEC, quantity: 0.11 },
+  { timestamp: Date.now() + 6 * HOUR_TO_SEC, quantity: 0.3 },
+  { timestamp: Date.now() + 7 * HOUR_TO_SEC, quantity: 0.22 },
+  { timestamp: Date.now() + 8 * HOUR_TO_SEC, quantity: 0.36 },
+  { timestamp: Date.now() + 9 * HOUR_TO_SEC, quantity: 0.23 },
+  { timestamp: Date.now() + 10 * HOUR_TO_SEC, quantity: 0.49 },
+  { timestamp: Date.now() + 11 * HOUR_TO_SEC, quantity: 0.5 },
+  { timestamp: Date.now() + 12 * HOUR_TO_SEC, quantity: 0.23 },
+  { timestamp: Date.now() + 13 * HOUR_TO_SEC, quantity: 0.19 },
+  { timestamp: Date.now() + 14 * HOUR_TO_SEC, quantity: 0.27 },
+  { timestamp: Date.now() + 15 * HOUR_TO_SEC, quantity: 0.29 },
+  { timestamp: Date.now() + 16 * HOUR_TO_SEC, quantity: 0.323 },
+  { timestamp: Date.now() + 17 * HOUR_TO_SEC, quantity: 0.44 },
+  { timestamp: Date.now() + 18 * HOUR_TO_SEC, quantity: 0.1 },
+  { timestamp: Date.now() + 19 * HOUR_TO_SEC, quantity: 0.05 },
+  { timestamp: Date.now() + 20 * HOUR_TO_SEC, quantity: 0.123 },
+  { timestamp: Date.now() + 21 * HOUR_TO_SEC, quantity: 0.366 },
+  { timestamp: Date.now() + 22 * HOUR_TO_SEC, quantity: 0.3232 },
+  { timestamp: Date.now() + 23 * HOUR_TO_SEC, quantity: 0.1123 },
+  { timestamp: Date.now() + 24 * HOUR_TO_SEC, quantity: 0.32 },
+  { timestamp: Date.now(), quantity: 0.35 }
+]
+
 export const scatterDomain = [Date.now(), Date.now() + 23 * HOUR_TO_SEC]

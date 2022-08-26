@@ -56,9 +56,21 @@ input:checked + .toggle-bg {
   @apply bg-[#4E4B66] border-[#EFF0F6];
 }
 
-.bar-recharts > .recharts-x-axis .recharts-cartesian-axis-tick:first-child line {
- stroke: none;
+.bar-recharts .recharts-cartesian-axis-tick:first-child line {
+  stroke: none;
 }
-.bar-recharts > .recharts-x-axis .recharts-cartesian-axis-tick:first-child text {
+.bar-recharts .recharts-cartesian-axis-tick:first-child text {
   font-size: 0;
+}
+.bar-recharts .recharts-cartesian-axis-tick:last-child line {
+  stroke: none;
+}
+.bar-recharts .recharts-cartesian-axis-tick:last-child text {
+  font-size: 0;
+}
+
+@media (max-width: 600px) {
+  .bar-recharts .recharts-cartesian-axis-tick {
+    display: none;
+  }
 }
