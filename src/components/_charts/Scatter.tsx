@@ -19,7 +19,7 @@ export const ComponentScatter = () => {
   return (
     <>
       <ScatterDashboard />
-      <div className="mb-[54px] h-[294px] w-11/12 rounded-t-[2px] bg-[#262338] md:h-[428px]">
+      <div className="mb-[54px] w-11/12 rounded-t-[2px] bg-[#262338] md:h-[428px]">
         <div className="flex h-[28px] w-full items-center justify-between bg-[#262338] px-6 pt-4">
           <small className="text-[#6E7191]">PRICE IN ETH</small>
           <div className="flex items-center justify-center gap-3">
