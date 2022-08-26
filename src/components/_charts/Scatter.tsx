@@ -72,6 +72,7 @@ export const ComponentScatter = () => {
                 hide={true}
                 stroke="#6E7191"
                 dataKey="timestamp"
+                name="Hour"
               />
               <Tooltip
                 labelClassName="hidden"
