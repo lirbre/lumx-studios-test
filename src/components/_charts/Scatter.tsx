@@ -16,7 +16,7 @@ import { barsData, scatterData, scatterDomain } from './data'
 
 export const ComponentScatter = () => {
   return (
-    <div className="h-[294px] w-11/12 rounded-t-[2px] bg-[#262338] md:h-[428px] md:max-w-[1216px]">
+    <div className="h-[294px] w-11/12 rounded-t-[2px] bg-[#262338] md:h-[428px]">
       <div className="flex h-[28px] w-full items-center justify-between bg-[#262338] px-6 pt-4">
         <small className="text-[#6E7191]">PRICE IN ETH</small>
         <div className="flex items-center justify-center gap-3">
@@ -33,7 +33,7 @@ export const ComponentScatter = () => {
       <ResponsiveContainer
         width={'100%'}
         height={338}
-        className="h-[294px] w-full rounded-b-[2px] bg-[#262338] md:h-[358px] md:max-w-[1216px]"
+        className="h-[294px] w-full rounded-b-[2px] bg-[#262338] md:h-[358px]"
       >
         {useMemo(
           () => (

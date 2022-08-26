@@ -1,3 +1,4 @@
+import { Dashboard } from '@/components'
 import { ComponentScatter } from '@/components/_charts'
 import { Meta } from '@/layouts'
 import { Main } from '@/templates'
@@ -12,7 +13,8 @@ const Index = () => {
         />
       }
     >
-      <div className="flex h-[800px] items-center justify-center pt-24">
+      <div className="flex h-[800px] flex-col items-center justify-center pt-24">
+        <Dashboard />
         <ComponentScatter />
       </div>
     </Main>
