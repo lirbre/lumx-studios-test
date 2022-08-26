@@ -1,5 +1,6 @@
 import { useTheme } from 'next-themes'
 
+import { ComponentScatter } from '@/components/_charts'
 import { Meta } from '@/layouts'
 import { Main } from '@/templates'
 
@@ -16,30 +17,10 @@ const Index = () => {
       }
     >
       <div
-        className="container"
+        className="pt-24"
         onClick={() => setTheme(resolvedTheme === 'dark' ? 'light' : 'dark')}
       >
-        <h4>Sphinx of black quartz, judge my vow.</h4>
-        <h5>Sphinx of black quartz, judge my vow.</h5>
-        <h6>Sphinx of black quartz, judge my vow.</h6>
-        <p>
-          Sphinx of black quartz, judge my vow. Sphinx of black quartz, judge my
-          vow.Sphinx of black quartz, judge my vow. Sphinx of black quartz,
-          judge my vow. Sphinx of black quartz, judge my vow. Sphinx of black
-          quartz, judge my vow.
-        </p>
-        <p>
-          Sphinx of black quartz, judge my vow. Sphinx of black quartz, judge my
-          vow.Sphinx of black quartz, judge my vow. Sphinx of black quartz,
-          judge my vow. Sphinx of black quartz, judge my vow. Sphinx of black
-          quartz, judge my vow.
-        </p>
-        <p>
-          Sphinx of black quartz, judge my vow. Sphinx of black quartz, judge my
-          vow.Sphinx of black quartz, judge my vow. Sphinx of black quartz,
-          judge my vow. Sphinx of black quartz, judge my vow. Sphinx of black
-          quartz, judge my vow.
-        </p>
+        <ComponentScatter />
       </div>
     </Main>
   )
