@@ -12,7 +12,7 @@ const Index = () => {
         />
       }
     >
-      <div className="flex h-[1200px] items-center justify-center pt-24">
+      <div className="flex h-[800px] items-center justify-center pt-24">
         <ComponentScatter />
       </div>
     </Main>
