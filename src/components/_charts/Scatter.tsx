@@ -95,44 +95,51 @@ export const ComponentScatter = () => {
         height={48}
         className="h-[294px] w-full bg-[#262338] md:h-[358px] md:max-w-[1216px]"
       >
-        <BarChart
-          width={500}
-          height={300}
-          data={barsData}
-          margin={{
-            top: 0,
-            right: 64,
-            bottom: 0,
-            left: 0
-          }}
-          barSize={4}
-          className="bar-recharts"
-        >
-          <XAxis
-            dataKey="timestamp"
-            domain={scatterDomain}
-            name="Hour"
-            tickFormatter={(unixTime) => `${moment(unixTime).format('HH')}:00`}
-            type="number"
-            tickCount={24}
-            markerHeight={10}
-            fontSize={'13px'}
-            dy={8}
-            stroke="#6E7191"
-            strokeWidth={0.2}
-          />{' '}
-          <YAxis
-            type="number"
-            name="Quantity"
-            dataKey="quantity"
-            axisLine={false}
-            tickLine={false}
-            domain={[0, 0.5]}
-            fontSize={'0'}
-            fontWeight={700}
-          />{' '}
-          <Bar dataKey="quantity" fill="#6E7191" />
-        </BarChart>
+        {useMemo(
+          () => (
+            <BarChart
+              width={500}
+              height={300}
+              data={barsData}
+              margin={{
+                top: 0,
+                right: 64,
+                bottom: 0,
+                left: 0
+              }}
+              barSize={4}
+              className="bar-recharts"
+            >
+              <XAxis
+                dataKey="timestamp"
+                domain={scatterDomain}
+                name="Hour"
+                tickFormatter={(unixTime) =>
+                  `${moment(unixTime).format('HH')}:00`
+                }
+                type="number"
+                tickCount={24}
+                markerHeight={10}
+                fontSize={'13px'}
+                dy={8}
+                stroke="#6E7191"
+                strokeWidth={0.2}
+              />{' '}
+              <YAxis
+                type="number"
+                name="Quantity"
+                dataKey="quantity"
+                axisLine={false}
+                tickLine={false}
+                domain={[0, 0.5]}
+                fontSize={'0'}
+                fontWeight={700}
+              />{' '}
+              <Bar dataKey="quantity" fill="#6E7191" />
+            </BarChart>
+          ),
+          []
+        )}
       </ResponsiveContainer>
       <div className="h-0 w-full rounded-b-[2px] bg-[#262338] md:h-6"></div>
     </div>
