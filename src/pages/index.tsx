@@ -7,8 +7,8 @@ const Index = () => {
     <Main
       meta={
         <Meta
-          title="Evil Boilerplate"
-          description="The perfect boilerplate for your project."
+          title="Lumx Studios - Challenge"
+          description="React Challenge for Lumx Studios"
         />
       }
     >
