@@ -105,7 +105,7 @@ export const ComponentScatter = () => {
         <ResponsiveContainer
           width={'100%'}
           height={48}
-          className="h-[294px] w-full bg-[#262338] md:h-[358px] md:max-w-[1216px]"
+          className="h-[294px] w-full bg-[#262338] md:h-[358px]"
         >
           {useMemo(
             () => (
