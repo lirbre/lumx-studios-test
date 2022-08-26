@@ -36,21 +36,42 @@ export const Dashboard = () => {
           </div>
         </div>
         <div className="flex w-[100px] items-center justify-center gap-1.5 pl-4 sm:w-auto xl:pl-12">
-          <Image
-            src="/assets/icons/icn-monitor-list.svg"
-            width={34}
-            height={34}
-          />
-          <Image
-            src="/assets/icons/icn-opensea-list.svg"
-            width={34}
-            height={34}
-          />
-          <Image
-            src="/assets/icons/icon-etherscan-list.svg"
-            width={34}
-            height={34}
-          />
+          <a
+            href="https://boredapeyachtclub.com/#/"
+            target="_blank"
+            rel="noreferrer"
+            className="flex items-center justify-center rounded-full"
+          >
+            <Image
+              src="/assets/icons/icn-monitor-list.svg"
+              width={34}
+              height={34}
+            />
+          </a>
+          <a
+            href="https://opensea.io/collection/boredapeyachtclub"
+            target="_blank"
+            rel="noreferrer"
+            className="flex items-center justify-center rounded-full"
+          >
+            <Image
+              src="/assets/icons/icn-opensea-list.svg"
+              width={34}
+              height={34}
+            />
+          </a>
+          <a
+            href="https://etherscan.io/address/0xbc4ca0eda7647a8ab7c2061c2e118a18a936f13d"
+            target="_blank"
+            rel="noreferrer"
+            className="flex items-center justify-center rounded-full"
+          >
+            <Image
+              src="/assets/icons/icon-etherscan-list.svg"
+              width={34}
+              height={34}
+            />
+          </a>
         </div>
       </div>
       <div className="ml-0 grid grid-cols-3 items-start gap-4 border-t border-[#4E4B66] p-6 md:grid-cols-6 lg:ml-auto lg:border-none xl:flex xl:gap-8 2xl:gap-[62px]">
