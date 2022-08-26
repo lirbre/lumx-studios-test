@@ -42,9 +42,9 @@ export const ComponentScatter = () => {
               height={400}
               margin={{
                 top: 44,
-                right: 64,
+                right: 34,
                 bottom: 34,
-                left: 0
+                left: -6
               }}
             >
               <CartesianGrid
@@ -111,9 +111,9 @@ export const ComponentScatter = () => {
               data={barsData}
               margin={{
                 top: 0,
-                right: 64,
+                right: 34,
                 bottom: 0,
-                left: 0
+                left: -6
               }}
               barSize={4}
               className="bar-recharts"
