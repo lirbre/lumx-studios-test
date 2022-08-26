@@ -17,7 +17,7 @@ const Index = () => {
       }
     >
       <div
-        className="pt-24"
+        className="flex h-[1200px] items-center justify-center pt-24"
         onClick={() => setTheme(resolvedTheme === 'dark' ? 'light' : 'dark')}
       >
         <ComponentScatter />

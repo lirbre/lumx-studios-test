@@ -1,4 +1,5 @@
 import moment from 'moment'
+import { useMemo } from 'react'
 import {
   CartesianGrid,
   ResponsiveContainer,
@@ -103,62 +104,78 @@ export const ComponentScatter = () => {
     <ResponsiveContainer
       width={'100%'}
       height={438}
-      className="max-w-[1216px] bg-[#262338]"
+      className="max-w-[1216px] rounded-[2px] bg-[#262338]"
     >
-      <ScatterChart
-        width={400}
-        height={400}
-        margin={{
-          top: 50,
-          right: 50,
-          bottom: 50,
-          left: 50
-        }}
-      >
-        <CartesianGrid xHeight={0.5} vertical={false} />
-        <XAxis
-          dataKey="timestamp"
-          domain={domain}
-          name="Hour"
-          tickFormatter={(unixTime) => `${moment(unixTime).format('HH')}:00`}
-          type="number"
-          tickCount={24}
-          markerHeight={10}
-          fontSize={'13px'}
-          dx={12}
-          dy={12}
-        />
-        <YAxis
-          dataKey="pricetag"
-          type="number"
-          name="Price"
-          axisLine={false}
-          tickLine={false}
-          domain={[0, 0.5]}
-          tickCount={6}
-          fontSize={'14px'}
-        />
-        <Tooltip
-          labelClassName="hidden"
-          wrapperClassName="rounded-lg shadow-lg"
-          itemStyle={{
-            color: '#f2f2f2'
-          }}
-          contentStyle={{
-            background: 'rgba(00, 00, 00, 0.2)',
-            backdropFilter: 'blur(4px)',
-            border: 'none'
-          }}
-          cursor={{ strokeDasharray: '3 3' }}
-          formatter={(name: string, value: string | number) => {
-            console.log(name, value)
-            if (value !== 'Hour') return `${name} ETH`
+      {useMemo(
+        () => (
+          <ScatterChart
+            width={1200}
+            height={400}
+            margin={{
+              top: 44,
+              right: 64,
+              bottom: 34,
+              left: 0
+            }}
+          >
+            <CartesianGrid
+              color="#262338"
+              xHeight={0.5}
+              vertical={false}
+              strokeWidth={0.2}
+            />
+            <XAxis
+              dataKey="timestamp"
+              domain={domain}
+              name="Hour"
+              tickFormatter={(unixTime) =>
+                `${moment(unixTime).format('HH')}:00`
+              }
+              type="number"
+              tickCount={24}
+              markerHeight={10}
+              fontSize={'13px'}
+              dx={12}
+              dy={12}
+              stroke="#6E7191"
+            />
+            <YAxis
+              dataKey="pricetag"
+              type="number"
+              name="Price"
+              axisLine={false}
+              tickLine={false}
+              domain={[0, 0.5]}
+              tickCount={6}
+              fontSize={'14px'}
+              stroke="#6E7191"
+              fontWeight={700}
+            />
+            <Tooltip
+              labelClassName="hidden"
+              wrapperClassName="rounded-lg shadow-lg"
+              itemStyle={{
+                color: '#f2f2f2'
+              }}
+              contentStyle={{
+                background: 'rgba(00, 00, 00, 0.2)',
+                backdropFilter: 'blur(4px)',
+                border: 'none',
+                padding: '.6rem 1.2rem'
+              }}
+              cursor={{ strokeDasharray: '3 3' }}
+              formatter={(name: string, value: string | number) => {
+                console.log(name, value)
+                if (value !== 'Hour') return `${name} ETH`
 
-            return `${moment(name).format('HH')}:00`
-          }}
-        />
-        <Scatter name="A school" data={data} fill="#8884d8" />
-      </ScatterChart>
+                return `${moment(name).format('HH')}:00`
+              }}
+            />
+            <Scatter name="A school" data={data} fill="#8884d8" />
+          </ScatterChart>
+        ),
+        []
+      )}
     </ResponsiveContainer>
   )
 }
