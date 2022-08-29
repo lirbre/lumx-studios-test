@@ -19,7 +19,7 @@
 
 .dark,
 [data-theme="dark"] {
-  --bg-primary: #1a1a1a;
+  --bg-primary: #14142b;
   --bg-secondary: #242424;
 
   --text-primary: #bfbfbf;
@@ -73,4 +73,8 @@ input:checked + .toggle-bg {
   .bar-recharts .recharts-cartesian-axis-tick {
     display: none;
   }
+}
+
+.input-icon {
+  background: #14142b url("/assets/icons/icn-search.svg") no-repeat 18px center;
 }

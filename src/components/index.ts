@@ -1,4 +1,5 @@
 import { Dashboard } from './dashboard'
+import { Navbar } from './navbar'
 import { ScatterDashboard } from './scatterdashboard'
 
-export { Dashboard, ScatterDashboard }
+export { Dashboard, Navbar, ScatterDashboard }

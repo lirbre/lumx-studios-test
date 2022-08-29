@@ -14,7 +14,7 @@ const Index = () => {
         />
       }
     >
-      <div className="mx-auto flex max-w-[1800px] flex-col items-center justify-center pt-12">
+      <div className="mx-auto flex max-w-[1800px] flex-col items-center justify-center pt-36">
         <Dashboard />
         <ComponentScatter />
         <LinesDashboard />
