@@ -7,11 +7,12 @@ import '../styles/typography.css'
 import { AppProps } from 'next/app'
 import { ThemeProvider } from 'next-themes'
 
-import { Navbar } from '@/components'
+import { Navbar, SideBar } from '@/components'
 
 const MyApp = ({ Component, pageProps }: AppProps) => (
   <ThemeProvider forcedTheme={'dark'}>
     <Navbar />
+    <SideBar />
     <Component {...pageProps} />
   </ThemeProvider>
 )
