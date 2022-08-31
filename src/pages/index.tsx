@@ -1,5 +1,5 @@
 import { Dashboard } from '@/components'
-import { ComponentScatter } from '@/components/_charts'
+import { ComponentLines, ComponentScatter } from '@/components/_charts'
 import { LinesDashboard } from '@/components/linesdashboard'
 import { Meta } from '@/layouts'
 import { Main } from '@/templates'
@@ -18,6 +18,7 @@ const Index = () => {
         <Dashboard />
         <ComponentScatter />
         <LinesDashboard />
+        <ComponentLines />
       </div>
     </Main>
   )

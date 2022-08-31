@@ -1,3 +1,4 @@
+import { ComponentLines } from './Lines'
 import { ComponentScatter } from './Scatter'
 
-export { ComponentScatter }
+export { ComponentLines, ComponentScatter }

@@ -1,34 +1,34 @@
 import moment from 'moment'
 import { useMemo } from 'react'
 import {
-  Bar,
-  BarChart,
   CartesianGrid,
+  Legend,
+  Line,
+  LineChart,
   ResponsiveContainer,
-  Scatter,
-  ScatterChart,
   Tooltip,
   XAxis,
   YAxis
 } from 'recharts'
 
 import { ScatterDashboard } from '../scatterdashboard'
-import { barsData, scatterData, scatterDomain } from './data'
+import { linesData, linesDomain } from './data'
+import { LinesLegend } from './LinesLegend'
 
-export const ComponentScatter = () => {
+export const ComponentLines = () => {
   return (
     <>
       <ScatterDashboard />
-      <div className="mb-[54px] w-11/12 rounded-t-[2px] bg-[#262338] md:h-[428px]">
+      <div className="mb-[54px] w-11/12 rounded-t-[2px] bg-[#262338] pb-2 md:pb-0">
         <div className="flex h-[28px] w-full items-center justify-between bg-[#262338] px-6 pt-4">
           <small className="text-[#6E7191]">PRICE IN ETH</small>
           <div className="flex items-center justify-center gap-3">
             <small className="text-[#6E7191]">Outliers:</small>
             <label
-              htmlFor="bars-outlier"
+              htmlFor="lines-outlier"
               className="relative flex cursor-pointer items-center"
             >
-              <input type="checkbox" id="bars-outlier" className="sr-only" />
+              <input type="checkbox" id="lines-outlier" className="sr-only" />
               <div className="toggle-bg h-6 w-20 border-[#EFF0F6] bg-[#4E4B66] " />
             </label>
           </div>
@@ -40,7 +40,7 @@ export const ComponentScatter = () => {
         >
           {useMemo(
             () => (
-              <ScatterChart
+              <LineChart
                 width={1200}
                 height={400}
                 margin={{
@@ -49,21 +49,23 @@ export const ComponentScatter = () => {
                   bottom: 34,
                   left: -6
                 }}
+                data={linesData}
+                className="lines-recharts"
               >
                 <CartesianGrid
                   color="#262338"
-                  xHeight={0.5}
+                  xHeight={24}
                   vertical={false}
                   strokeWidth={0.2}
                   stroke="#6E7191"
                 />
                 <YAxis
-                  dataKey="pricetag"
+                  dataKey="name"
                   type="number"
                   name="Price"
                   axisLine={false}
                   tickLine={false}
-                  domain={[0, 0.5]}
+                  domain={[19, 24]}
                   tickCount={6}
                   fontSize={'14px'}
                   stroke="#6E7191"
@@ -72,10 +74,18 @@ export const ComponentScatter = () => {
                 />
                 <XAxis
                   strokeWidth={0.2}
-                  hide={true}
                   stroke="#6E7191"
                   dataKey="timestamp"
                   name="Hour"
+                  domain={linesDomain}
+                  tickFormatter={(unixTime) =>
+                    `${moment(unixTime).format('HH')}:00`
+                  }
+                  type="number"
+                  tickCount={14}
+                  markerHeight={10}
+                  fontSize={'13px'}
+                  dy={12}
                 />
                 <Tooltip
                   labelClassName="hidden"
@@ -96,59 +106,16 @@ export const ComponentScatter = () => {
                     return `${moment(name).format('HH')}:00`
                   }}
                 />
-                <Scatter name="A school" data={scatterData} fill="#8884d8" />
-              </ScatterChart>
-            ),
-            []
-          )}
-        </ResponsiveContainer>
-        <ResponsiveContainer
-          width={'100%'}
-          height={48}
-          className="h-[294px] w-full bg-[#262338] md:h-[358px]"
-        >
-          {useMemo(
-            () => (
-              <BarChart
-                width={500}
-                height={300}
-                data={barsData}
-                margin={{
-                  top: 0,
-                  right: 34,
-                  bottom: 0,
-                  left: -6
-                }}
-                barSize={4}
-                className="bar-recharts"
-              >
-                <XAxis
-                  dataKey="timestamp"
-                  domain={scatterDomain}
-                  name="Hour"
-                  tickFormatter={(unixTime) =>
-                    `${moment(unixTime).format('HH')}:00`
-                  }
-                  type="number"
-                  tickCount={24}
-                  markerHeight={10}
-                  fontSize={'13px'}
-                  dy={8}
-                  stroke="#6E7191"
-                  strokeWidth={0.2}
-                />{' '}
-                <YAxis
-                  type="number"
-                  name="Quantity"
-                  dataKey="quantity"
-                  axisLine={false}
-                  tickLine={false}
-                  domain={[0, 0.5]}
-                  fontSize={'0'}
-                  fontWeight={700}
-                />{' '}
-                <Bar dataKey="quantity" fill="#6E7191" />
-              </BarChart>
+                <Legend content={LinesLegend} />
+                <Line
+                  type="monotone"
+                  dataKey="Average Price"
+                  stroke="#80CCF4"
+                  activeDot={{ r: 8 }}
+                  strokeDasharray="8 8 8"
+                />
+                <Line type="monotone" dataKey="Floor Price" stroke="#8775D0" />{' '}
+              </LineChart>
             ),
             []
           )}

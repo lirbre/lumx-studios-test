@@ -69,6 +69,19 @@ input:checked + .toggle-bg {
   font-size: 0;
 }
 
+.lines-recharts .xAxis .recharts-cartesian-axis-tick:first-child line {
+  stroke: none;
+}
+.lines-recharts .xAxis .recharts-cartesian-axis-tick:first-child text {
+  font-size: 0;
+}
+.lines-recharts .xAxis .recharts-cartesian-axis-tick:last-child line {
+  stroke: none;
+}
+.lines-recharts .xAxis .recharts-cartesian-axis-tick:last-child text {
+  font-size: 0;
+}
+
 @media (max-width: 600px) {
   .bar-recharts .recharts-cartesian-axis-tick {
     display: none;

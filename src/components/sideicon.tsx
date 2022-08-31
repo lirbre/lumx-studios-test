@@ -13,7 +13,7 @@ export const SideIcon = ({ icon, isSelected, description }: SideIconProps) => {
         isSelected ? 'bg-[#4E4B66]' : ''
       } flex flex-col items-center justify-center gap-1.5 rounded-[2px] py-1.5`}
     >
-      <Image src={icon} height={22} width={22} objectFit={'contain'} />
+      <Image src={icon} height={23} width={23} objectFit={'contain'} />
       <small
         className={`${
           isSelected ? 'text-[#EFF0F7]' : 'text-[#6E7191]'

@@ -111,4 +111,70 @@ export const barsData = [
   { timestamp: Date.now() + 24 * HOUR_TO_SEC, quantity: 0 }
 ]
 
+export const linesData = [
+  { timestamp: Date.now(), 'Average Price': 20, 'Floor Price': 23 },
+  {
+    timestamp: Date.now() + 1 * HOUR_TO_SEC,
+    'Average Price': 21,
+    'Floor Price': 22
+  },
+  {
+    timestamp: Date.now() + 2 * HOUR_TO_SEC,
+    'Average Price': 22,
+    'Floor Price': 20
+  },
+  {
+    timestamp: Date.now() + 3 * HOUR_TO_SEC,
+    'Average Price': 23,
+    'Floor Price': 21
+  },
+  {
+    timestamp: Date.now() + 4 * HOUR_TO_SEC,
+    'Average Price': 23.9,
+    'Floor Price': 19
+  },
+  {
+    timestamp: Date.now() + 5 * HOUR_TO_SEC,
+    'Average Price': 23,
+    'Floor Price': 21
+  },
+  {
+    timestamp: Date.now() + 6 * HOUR_TO_SEC,
+    'Average Price': 22,
+    'Floor Price': 22
+  },
+  {
+    timestamp: Date.now() + 7 * HOUR_TO_SEC,
+    'Average Price': 21,
+    'Floor Price': 23
+  },
+  {
+    timestamp: Date.now() + 8 * HOUR_TO_SEC,
+    'Average Price': 19,
+    'Floor Price': 22
+  },
+  {
+    timestamp: Date.now() + 9 * HOUR_TO_SEC,
+    'Average Price': 20,
+    'Floor Price': 21
+  },
+  {
+    timestamp: Date.now() + 10 * HOUR_TO_SEC,
+    'Average Price': 21,
+    'Floor Price': 20
+  },
+  {
+    timestamp: Date.now() + 11 * HOUR_TO_SEC,
+    'Average Price': 22,
+    'Floor Price': 19
+  },
+  {
+    timestamp: Date.now() + 12 * HOUR_TO_SEC,
+    'Average Price': 20,
+    'Floor Price': 23
+  }
+]
+
 export const scatterDomain = [Date.now(), Date.now() + 23 * HOUR_TO_SEC]
+
+export const linesDomain = [Date.now(), Date.now() + 12 * HOUR_TO_SEC]
