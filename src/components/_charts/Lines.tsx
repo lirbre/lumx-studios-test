@@ -114,7 +114,12 @@ export const ComponentLines = () => {
                   activeDot={{ r: 8 }}
                   strokeDasharray="8 8 8"
                 />
-                <Line type="monotone" dataKey="Floor Price" stroke="#8775D0" />{' '}
+                <Line
+                  type="monotone"
+                  dataKey="Floor Price"
+                  stroke="#8775D0"
+                  style={{ filter: 'drop-shadow(0 12px 12px #8775D0)' }}
+                />{' '}
               </LineChart>
             ),
             []
